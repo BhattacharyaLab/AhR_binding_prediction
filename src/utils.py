@@ -10,14 +10,15 @@ import shutil
 #     return dest
 
 
-def download_file(url, dest):
+def download_file(url, dest, file_size=None):
     # keep track of how much of the file is downloaded
     total = 0
     last_percent = 0
     
     # get the size of the file
-    info = requests.head(url)
-    file_size = int(info.headers['Content-Length'])
+    if file_size is None:
+        info = requests.head(url)
+        file_size = int(info.headers['Content-Length'])
     
     # download the file
     with requests.get(url, stream=True) as r:
