@@ -2,12 +2,14 @@ import os
 from pybedtools import BedTool
 
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 REFERENCE_GENOME = 'hg19' #change to the desired reference genome (e.g., hg38)
 REFERENCE_GENOME_URL = f'https://hgdownload.soe.ucsc.edu/goldenPath/{REFERENCE_GENOME}/bigZips/{REFERENCE_GENOME}.fa.gz'
 
-DATA_DIR = '../data'
+DATA_DIR = os.path.join(BASE_DIR, '../data')
 MOTIF_BED = 'motifs.bed.gz'
 SEQ_FILE = 'sequences.csv.gz'
+
 
 def set_name(peaks, name):
     peaks = peaks.cat(peaks).to_dataframe()
