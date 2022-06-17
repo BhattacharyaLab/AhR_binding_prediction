@@ -15,13 +15,14 @@ parser = argparse.ArgumentParser(description="Extract motif locations and motif 
 parser.add_argument('--factor', type=str, default="AhR", help="Name of the factor (e.g. AhR, ER, GR)")
 parser.add_argument('--forward-motif', type=str, default='GCGTG', help="Forward motif sequence (as python regex)")
 parser.add_argument('--reverse-complement-motif', type=str, default='CACGT', help="Reverse complement motif sequence (as python regex)")
-parser.add_argument('--flank_width', type=int, default=7, help='Number of flanking nucleotides to extract')
+parser.add_argument('--flank-width', type=int, default=7, help='Number of flanking nucleotides to extract')
 
 script_args = parser.parse_args()
 
 factor = script_args.factor
 forward_motif = script_args.forward_motif
 reverse_complement_motif = script_args.reverse_complement_motif
+flank_width = script_args.flank_width
 
 factor = 'AhR'
 forward_motif = 'GCGTG'
@@ -132,7 +133,11 @@ genome_dict = GenomeDict(genome_path)
 blacklisted_regions = [BedTool(blacklisted_file) for blacklisted_file in blacklisted_region_files] 
 blacklisted_regions = BedTool.cat(*blacklisted_regions)
 
-all_motifs, seqs = all_genomic_motifs(forward_motif=forward_motif, reverse_complement_motif=reverse_complement_motif)
+all_motifs, seqs = all_genomic_motifs(
+    forward_motif=forward_motif,
+    reverse_complement_motif=reverse_complement_motif,
+    flank_width=flank_width,
+)
 
 genome_dict = None
 

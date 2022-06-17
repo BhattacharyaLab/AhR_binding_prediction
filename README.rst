@@ -1,21 +1,3 @@
-TODOs for the AhR binding code 
-
----- 
-
-Put the list of ENCODE files in /data/encode_filelist 
-
-Write the data download script 
-
-	E.g. Download MCF-7 do data/download/MCF-7/ {dnase_files} {tf_files} {hm_files} 
-
-Polish the find_genomic_motifs.py script 
-
- 
-
- 
-
- 
-
 Dependencies 
 
 ---------------------------------------------------------------- 
