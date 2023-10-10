@@ -1,3 +1,6 @@
+Developed and maintained by David Filipovic <filipov4@msu.edu>
+
+
 Dependencies 
 
 ---------------------------------------------------------------- 
