@@ -3,7 +3,6 @@ Developed and maintained by David Filipovic <filipov4@msu.edu>
 
 Dependencies 
 =============
----------------------------------------------------------------- 
 
 The code for this project has been written in Python 3 and requires the Python dependencies listed below. The dependencies are also available in the *requirements.txt* file and can be installed with the *pip install -r requirements.txt* 
 
@@ -23,10 +22,8 @@ The code for this project has been written in Python 3 and requires the Python d
 
  
 
-# Download the reference genome 
-
----------------------------------------------------------------- 
-
+Download the reference genome 
+=======================================
  
 
 In order to create a bed file list of viable motifs, we first must download the hg19 reference genome. 
@@ -54,9 +51,7 @@ To download the reference genome, issue the following command
  
 
 Download the input data 
-
----------------------------------------------------------------- 
-
+=======================================
  
 
 The repository comes preloaded with the AhR ChIP-seq bed files, as well as DNase-seq bed files for each investigated cell line/type. These files are contained in the *data/chipseq/* directory. 
@@ -77,9 +72,7 @@ To download the input data, issue the following command
 
 
 Create the AHR motif (DRE) bedfile 
-
----------------------------------------------------------------- 
-
+====================================================
 Creates a bed file containing all AhR motifs – Dioxin Response Elements (DREs) in the reference genome. 
 
  
@@ -97,9 +90,7 @@ To create a motif file, issue the following command
  
 
 Create a list of training/validation AHR motifs  
-
----------------------------------------------------------------- 
-
+====================================================
 Creates a list of singleton bound (only one DRE under the AhR peak) and isolated unbound DREs (at least 100bps away from any other DRE) in open chromatin, as well as DREs under multi-DRE bound AhR peaks, and five dummy DREs for each 0-DRE AhR peak. 
 
  
@@ -107,9 +98,7 @@ Creates a list of singleton bound (only one DRE under the AhR peak) and isolated
  
 
 Create the files containing training/validation AhR motifs for each cell line/type 
-
-------------------------------------------------------------------------------- 
-
+===========================================================================================
 To create the list of training/validation AhR motifs to be used in the construction of input features used in the subsequent machine learning steps, issue the following commands 
 
  
@@ -129,9 +118,7 @@ To create the list of training/validation AhR motifs to be used in the construct
  
 
 Prepare input features 
-
------------------------------- 
-
+=======================================
 To extract DNase-seq, HM, and TF features for each cell line/type, issue the following commands 
 
  
