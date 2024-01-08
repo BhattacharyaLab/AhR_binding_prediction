@@ -2,7 +2,7 @@ Developed and maintained by David Filipovic <filipov4@msu.edu>
 
 
 Dependencies 
-
+=============
 ---------------------------------------------------------------- 
 
 The code for this project has been written in Python 3 and requires the Python dependencies listed below. The dependencies are also available in the *requirements.txt* file and can be installed with the *pip install -r requirements.txt* 
@@ -23,7 +23,7 @@ The code for this project has been written in Python 3 and requires the Python d
 
  
 
-Download the reference genome 
+# Download the reference genome 
 
 ---------------------------------------------------------------- 
 
